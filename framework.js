@@ -19,13 +19,14 @@ class Sanitizer {
   sanitize(input) {
     const output = {};
     const options = this.#options;
+    const throws = this.#throwSanitize;
     for (const name of Object.keys(input)) {
       const dirty = input[name];
       if (typeof dirty !== "string") {
         output[name] = dirty;
       } else {
         const clean = this.#purifier.sanitize(dirty, options);
-        if (this.#throwSanitize && clean.length < dirty.length) {
+        if (throws && clean.length < dirty.length) {
           throw new Error(`HTML Injection, input: ${dirty}`);
         }
         output[name] = clean;
