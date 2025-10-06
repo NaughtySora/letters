@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    env_file:
+      - .env
+    ports:
+      - "${SMTP_DEV_PORT}:${SMTP_DEV_PORT}"
+      - "${SMTP_DEV_UI_PORT}:${SMTP_DEV_UI_PORT}"
