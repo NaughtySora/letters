@@ -8,7 +8,7 @@ const { Template } = require('../main');
 const templates = new Template({ throwSanitize: true })
   .load([path.resolve(__dirname, "./reset-password"),]);
 
-const EMAIL = 'naughtysora@proton.me';
+const EMAIL = 'someguy@gmail.com';
 
 const main = async () => {
   const mailer = nodemailer.createTransport(config.dev);

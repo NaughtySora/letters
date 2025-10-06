@@ -14,7 +14,7 @@ folder/
 
 ## Example
 ```js
-const EMAIL = 'naughtysora@proton.me';
+const EMAIL = 'someguy@gmail.com';
 
 const templates = new Template({ throwSanitize: true })
   .load([path.resolve(__dirname, "./reset-password"),]);

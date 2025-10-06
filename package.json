@@ -23,8 +23,8 @@
     "email": "naughtysora@proton.me"
   },
   "scripts": {
-    "dev": "node --env-file=.env main.js",
-    "preview": "node --env-file=.env -e require('open').default(`http://localhost:/${process.env.SMTP_DEV_UI_PORT}`)"
+    "preview": "node --env-file=.env -e require('open').default(`http://localhost:${process.env.SMTP_DEV_UI_PORT}/`)",
+    "test": "node --env-file=.env ./test/index.js"
   },
   "dependencies": {
     "dompurify": "^3.2.7",
