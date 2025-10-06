@@ -1,18 +1,41 @@
 {
-  "name": "mailer",
-  "version": "1.0.0",
-  "description": "Application mailer",
-  "license": "MIT",
+  "name": "letters",
+  "version": "0.0.1",
   "author": "NaughtySora <naughtysora@proton.me>",
-  "exports": "./main.js",
+  "license": "MIT",
+  "description": "Letters builder",
+  "readMeFilename": "README.md",
+  "keywords": [
+    "nodejs",
+    "letters",
+    "html",
+    "sanitization"
+  ],
+  "files": [
+    "main.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaughtySora/letters.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NaughtySora/letters/issues",
+    "email": "naughtysora@proton.me"
+  },
   "scripts": {
     "dev": "node --env-file=.env main.js",
-    "preview": "node --env-file=.env preview.js"
+    "preview": "node --env-file=.env -e require('open').default(`http://localhost:/${process.env.SMTP_DEV_UI_PORT}`)"
   },
   "dependencies": {
     "dompurify": "^3.2.7",
-    "jsdom": "^27.0.0",
-    "nodemailer": "^7.0.6",
-    "open": "^10.2.0"
-  }
+    "jsdom": "^27.0.0"
+  },
+  "devDependencies": {
+    "c8": "^10.1.3",
+    "nodemailer": "^7.0.7",
+    "open": "^10.2.0",
+    "typescript": "^5.9.3"
+  },
+  "types": "main.d.ts",
+  "exports": "./main.js"
 }
