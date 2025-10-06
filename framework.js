@@ -69,6 +69,7 @@ class FrameWork {
       const { script, styles = "" } = this.#loadDir(path);
       this.#collection.set(key, (props) => script({ ...props, styles, }));
     }
+    return this;
   }
 
   letter(name, options) {
@@ -99,7 +100,4 @@ class FrameWork {
   }
 }
 
-const framework = new FrameWork({ throwSanitize: true });
-framework.load([resolve(__dirname, "./reset-password"),]);
-const letter = framework.letter("reset-password", { name: "123456" });
-console.log(letter);
+module.exports = FrameWork;
