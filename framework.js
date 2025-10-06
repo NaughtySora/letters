@@ -21,12 +21,15 @@ class Sanitizer {
     const options = this.#options;
     for (const name of Object.keys(input)) {
       const dirty = input[name];
-      if (typeof dirty !== "string") continue;
-      const clean = this.#purifier.sanitize(dirty, options);
-      if (this.#throwSanitize && clean.length < dirty.length) {
-        throw new Error(`HTML Injection, input: ${dirty}`);
+      if (typeof dirty !== "string") {
+        output[name] = dirty;
+      } else {
+        const clean = this.#purifier.sanitize(dirty, options);
+        if (this.#throwSanitize && clean.length < dirty.length) {
+          throw new Error(`HTML Injection, input: ${dirty}`);
+        }
+        output[name] = clean;
       }
-      output[name] = clean;
     }
     return output;
   }
