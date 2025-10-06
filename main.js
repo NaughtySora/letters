@@ -2,7 +2,7 @@
 
 const nodemailer = require('nodemailer');
 const config = require('./config.js');
-require("./Templater.js");
+require("./framework.js");
 
 //! mailhog UI
 // http://localhost:8025/
