@@ -15,6 +15,7 @@ const useJS = path.resolve(__dirname, "./letters/useJS");
 
 // example with nodemailer
 // change config.dev to config.prod, add config.prod real SMTP service
+// don't forget docker compose up
 const send = async (html) => {
   const EMAIL = 'someguy@gmail.com';
   const mailer = nodemailer.createTransport(config.dev);
