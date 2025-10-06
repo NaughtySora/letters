@@ -1,0 +1,16 @@
+:root {
+  --green-100: rgba(0, 128, 0, 0.735);
+}
+
+ul li {
+  color: var(--green-100);
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

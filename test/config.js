@@ -6,5 +6,5 @@ module.exports = {
     port: parseInt(process.env.SMTP_DEV_PORT, 10),
     secure: false,
   },
-  prod: {}
+  prod: {},
 };

@@ -37,7 +37,6 @@ class Sanitizer {
 
   static #DEFAULT_OPTIONS = { ALLOWED_TAGS: [], ALLOWED_ATTR: [], };
 }
-
 class Realm {
   static #EXECUTION_TIMEOUT = 5000;
 
@@ -76,7 +75,7 @@ class Template {
     return this;
   }
 
-  html(name, options) {
+  html(name, options = {}) {
     const letter = this.#collection.get(name);
     if (letter === undefined) return;
     if (typeof options !== "object" || options === null) {
